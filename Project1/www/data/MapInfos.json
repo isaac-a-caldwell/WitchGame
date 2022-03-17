@@ -44,8 +44,8 @@ null,
 {"id":42,"expanded":false,"name":"LazyLicker","order":42,"parentId":41,"scrollX":437.09090909090907,"scrollY":320.3636363636364},
 {"id":43,"expanded":false,"name":"Deglame","order":43,"parentId":41,"scrollX":814.8,"scrollY":1187.3999999999999},
 {"id":44,"expanded":false,"name":"Hell","order":44,"parentId":43,"scrollX":609,"scrollY":409.5},
-{"id":45,"expanded":false,"name":"RawhideRoad_Start","order":45,"parentId":0,"scrollX":730.8,"scrollY":491.4},
-{"id":46,"expanded":true,"name":"Monster Pit","order":46,"parentId":0,"scrollX":766.8,"scrollY":640.1999999999999},
+{"id":45,"expanded":false,"name":"RawhideRoad_Start","order":45,"parentId":0,"scrollX":766.8,"scrollY":491.4},
+{"id":46,"expanded":true,"name":"Monster Pit","order":46,"parentId":0,"scrollX":757.1999999999999,"scrollY":491.4},
 {"id":47,"expanded":false,"name":"Monster pit secret","order":47,"parentId":46,"scrollX":730.8,"scrollY":501},
-{"id":48,"expanded":false,"name":"Pit Cave","order":48,"parentId":46,"scrollX":832,"scrollY":640}
+{"id":48,"expanded":false,"name":"Pit Cave","order":48,"parentId":46,"scrollX":730.8,"scrollY":501}
 ]
