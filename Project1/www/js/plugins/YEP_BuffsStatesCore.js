@@ -1338,6 +1338,7 @@ Game_BattlerBase.prototype.removeStateCounter = function(stateId) {
 
 Game_BattlerBase.prototype.getStateCounter = function(stateId) {
   if (this._stateCounter === undefined) this.initStateCounter();
+  if (this._stateCounter[stateId] === undefined) return 0;
   return this._stateCounter[stateId];
 };
 

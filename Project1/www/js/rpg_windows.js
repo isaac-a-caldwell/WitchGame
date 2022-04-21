@@ -5130,7 +5130,7 @@ Window_BattleLog.prototype.displayActionResults = function(subject, target) {
         this.push('popupDamage', target);
         this.push('popupDamage', subject);
         this.displayDamage(target);
-        this.displayAffectedStatus(target);
+        this.displayAffectedStatus(target, false);
         this.displayFailure(target);
         this.push('waitForNewLine');
         this.push('popBaseLine');
@@ -5144,7 +5144,7 @@ Window_BattleLog.prototype.displayActionResults = function(subject, target, acti
         this.push('popupDamage', target);
         this.push('popupDamage', subject);
         this.displayDamage(target);
-        this.displayAffectedStatus(target);
+        this.displayAffectedStatus(target, false);
         this.displayFailure(target, action);
         this.push('waitForNewLine');
         this.push('popBaseLine');
@@ -5238,26 +5238,26 @@ Window_BattleLog.prototype.displayTpDamage = function(target) {
     }
 };
 
-Window_BattleLog.prototype.displayAffectedStatus = function(target) {
+Window_BattleLog.prototype.displayAffectedStatus = function(target, endTurn) {
     if (target.result().isStatusAffected()) {
         this.push('pushBaseLine');
-        this.displayChangedStates(target);
+        this.displayChangedStates(target, endTurn);
         this.displayChangedBuffs(target);
         this.push('waitForNewLine');
         this.push('popBaseLine');
     }
 };
 
-Window_BattleLog.prototype.displayAutoAffectedStatus = function(target) {
+Window_BattleLog.prototype.displayAutoAffectedStatus = function(target, endTurn) {
     if (target.result().isStatusAffected()) {
-        this.displayAffectedStatus(target, null);
+        this.displayAffectedStatus(target, endTurn);
         this.push('clear');
     }
 };
 
-Window_BattleLog.prototype.displayChangedStates = function(target) {
+Window_BattleLog.prototype.displayChangedStates = function(target, endTurn) {
     this.displayAddedStates(target);
-    this.displayRemovedStates(target);
+    this.displayRemovedStates(target, endTurn);
 };
 
 Window_BattleLog.prototype.displayAddedStates = function(target) {
@@ -5275,15 +5275,17 @@ Window_BattleLog.prototype.displayAddedStates = function(target) {
     }, this);
 };
 
-Window_BattleLog.prototype.displayRemovedStates = function(target) {
+Window_BattleLog.prototype.displayRemovedStates = function(target, endTurn) {
     target.result().removedStateObjects().forEach(function(state) {
         if (state.message4) {
             this.push('popBaseLine');
             this.push('pushBaseLine');
             this.push('addText', target.name() + state.message4);
         }
-        if (target.result().removedStates.contains(2))
+        if (target.result().removedStates.contains(2) && !endTurn)
         {
+            console.log( target.name() + " can't guard any more!" );
+            console.trace();
             this.push('addText', target.name() + " can't guard any more!");
         }
     }, this);

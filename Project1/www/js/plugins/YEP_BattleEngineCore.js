@@ -5439,7 +5439,7 @@ Window_BattleLog.prototype.displayActionResults = function(subject, target) {
       if (target.result().used) {
           this.displayCritical(target);
           this.displayDamage(target);
-          this.displayAffectedStatus(target);
+          this.displayAffectedStatus(target, false);
           this.displayFailure(target);
       }
     } else {
@@ -5579,9 +5579,9 @@ Window_BattleLog.prototype.displayAddedStates = function(target) {
 
 Yanfly.BEC.Window_BattleLog_displayRemovedStates =
     Window_BattleLog.prototype.displayRemovedStates;
-Window_BattleLog.prototype.displayRemovedStates = function(target) {
+Window_BattleLog.prototype.displayRemovedStates = function(target, endTurn) {
     if (!Yanfly.Param.BECShowStateText) return;
-    Yanfly.BEC.Window_BattleLog_displayRemovedStates.call(this, target);
+    Yanfly.BEC.Window_BattleLog_displayRemovedStates.call(this, target, endTurn);
 };
 
 Yanfly.BEC.Window_BattleLog_displayChangedBuffs =

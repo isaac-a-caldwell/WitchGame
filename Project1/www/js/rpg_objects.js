@@ -1653,7 +1653,6 @@ Game_Action.prototype.apply = function(target) {
     result.drain = this.isDrain();
     if (result.isHit()) {
         if (this.item().damage.type > 0) {
-            result.critical = false;//(Math.random() < this.itemCri(target));
             var value = this.makeDamageValue(target, result.critical);
             this.executeDamage(target, value);
         }

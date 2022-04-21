@@ -2138,7 +2138,6 @@ function BattleManager() {
 
 BattleManager.setup = function(troopId, canEscape, canLose) {
     this.initMembers();
-    console.log("setup1 can Escape =" + canEscape);
     this._canEscape = canEscape;
     this._canLose = canLose;
     $gameTroop.setup(troopId);
@@ -2146,21 +2145,9 @@ BattleManager.setup = function(troopId, canEscape, canLose) {
     this.makeEscapeRatio();
 };
 
-/*BattleManager.setup = function(troopId) {
-    var canEscape = this._canEscape;
-    console.log("setup2 can Escape =" + canEscape);
-    var canLose = this._canLose;
-    this.initMembers();
-    this._canEscape = canEscape;
-    this._canLose = canLose;
-    $gameTroop.setup(troopId);
-    $gameScreen.onBattleStart();
-};*/
-
 BattleManager.initMembers = function() {
     this._phase = 'init';
     this._canEscape = false;
-    console.log("initmembers can Escape =" + this._canEscape);
     this._canLose = false;
     this._battleTest = false;
     this._eventCallback = null;
@@ -2291,7 +2278,6 @@ BattleManager.updateEvent = function() {
                 return this.updateEventMain();
             }
     }
-    //console.log("Battle Manager Event Updated");
 
     return this.checkAbort();
 };
@@ -2459,7 +2445,6 @@ BattleManager.selectPreviousCommand = function() {
 
 BattleManager.refreshStatus = function() {
     this._statusWindow.refresh();
-    //console.log("refresh status");
 };
 
 BattleManager.startTurn = function() {
@@ -2495,7 +2480,7 @@ BattleManager.processTurn = function() {
     } else {
         subject.onAllActionsEnd();
         this.refreshStatus();
-        this._logWindow.displayAutoAffectedStatus(subject);
+        this._logWindow.displayAutoAffectedStatus(subject, false);
         this._logWindow.displayCurrentState(subject);
         this._logWindow.displayRegeneration(subject);
         this._subject = this.getNextSubject();
@@ -2509,7 +2494,7 @@ BattleManager.endTurn = function() {
     this.allBattleMembers().forEach(function(battler) {
         battler.onTurnEnd();
         this.refreshStatus();
-        this._logWindow.displayAutoAffectedStatus(battler);
+        this._logWindow.displayAutoAffectedStatus(battler, true);
         this._logWindow.displayRegeneration(battler);
     }, this);
     if (this.isForcedTurn()) {
@@ -2562,9 +2547,6 @@ BattleManager.startAction = function() {
     var subject = this._subject;
     var action = subject.currentAction();
     var targets = action.makeTargets();
-    //console.log("make targets");
-    //console.log(targets.length);
-    //targets.forEach(element => console.log(element));
     this._phase = 'action';
     this._action = action;
     this._targets = targets;
@@ -2847,8 +2829,6 @@ BattleManager.shouldRestarto = false;
 BattleManager.shouldRestart = function() {
     if ($gameParty && $gameParty.inBattle())
     {
-        //console.log(Input._latestButton);
-        //console.log(Input._pressedTime);
         if (Input._latestButton === 'restartBattle')
         {
             this.shouldRestarto = true;
