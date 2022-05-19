@@ -45,9 +45,9 @@ null,
 {"id":43,"expanded":true,"name":"Deglame","order":43,"parentId":41,"scrollX":814.5454545454545,"scrollY":1187.2727272727273},
 {"id":44,"expanded":false,"name":"Hell","order":44,"parentId":43,"scrollX":437.09090909090907,"scrollY":326.1818181818182},
 {"id":45,"expanded":false,"name":"RawhideRoad_Start","order":45,"parentId":0,"scrollX":766.8,"scrollY":491.4},
-{"id":46,"expanded":true,"name":"Monster Pit","order":46,"parentId":0,"scrollX":747.6,"scrollY":948.5999999999999},
-{"id":47,"expanded":false,"name":"Monster pit secret","order":47,"parentId":46,"scrollX":437.09090909090907,"scrollY":320.3636363636364},
-{"id":48,"expanded":false,"name":"Pit Cave","order":48,"parentId":46,"scrollX":437.09090909090907,"scrollY":326.1818181818182},
-{"id":49,"expanded":true,"name":"WitchMoot","order":49,"parentId":0,"scrollX":1395.6363636363637,"scrollY":1649.090909090909},
-{"id":50,"expanded":false,"name":"WitchMootEntrance","order":50,"parentId":49,"scrollX":437.09090909090907,"scrollY":320.3636363636364}
+{"id":46,"expanded":true,"name":"Monster Pit","order":46,"parentId":0,"scrollX":953.7777777777778,"scrollY":1076},
+{"id":47,"expanded":false,"name":"Monster pit secret","order":47,"parentId":46,"scrollX":541.3333333333334,"scrollY":371.1111111111111},
+{"id":48,"expanded":false,"name":"Pit Cave","order":48,"parentId":46,"scrollX":850.6666666666666,"scrollY":364},
+{"id":49,"expanded":true,"name":"WitchMoot","order":49,"parentId":0,"scrollX":1600,"scrollY":1895.5555555555557},
+{"id":50,"expanded":false,"name":"WitchMootEntrance","order":50,"parentId":49,"scrollX":541.3333333333334,"scrollY":371.1111111111111}
 ]

@@ -2041,8 +2041,20 @@ Scene_Shop.prototype.onNumberCancel = function() {
 };
 
 Scene_Shop.prototype.doBuy = function(number) {
-    $gameParty.loseGold(number * this.buyingPrice());
-    $gameParty.gainItem(this._item, number);
+    if ($gameSwitches._data[44] && this._item.id === 19)
+    {
+        console.log("buying bread earrings!")
+        $gameParty.loseGold(this.buyingPrice());
+        $gameParty.gainItem(this._item, number);
+        this._buyWindow._shopGoods.pop();
+        this._buyWindow.refresh();
+        this._buyWindow.select(3);
+    }
+    else
+    {
+        $gameParty.loseGold(number * this.buyingPrice());
+        $gameParty.gainItem(this._item, number);
+    }
 };
 
 Scene_Shop.prototype.doSell = function(number) {
@@ -2065,6 +2077,8 @@ Scene_Shop.prototype.endNumberInput = function() {
 Scene_Shop.prototype.maxBuy = function() {
     var max = $gameParty.maxItems(this._item) - $gameParty.numItems(this._item);
     var price = this.buyingPrice();
+    if (this._item.id === 19)
+        return 1;
     if (price > 0) {
         return Math.min(max, Math.floor(this.money() / price));
     } else {
