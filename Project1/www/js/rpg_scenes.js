@@ -2043,7 +2043,6 @@ Scene_Shop.prototype.onNumberCancel = function() {
 Scene_Shop.prototype.doBuy = function(number) {
     if ($gameSwitches._data[44] && this._item.id === 19)
     {
-        console.log("buying bread earrings!")
         $gameParty.loseGold(this.buyingPrice());
         $gameParty.gainItem(this._item, number);
         this._buyWindow._shopGoods.pop();

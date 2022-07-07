@@ -695,7 +695,6 @@ Game_Enemy.prototype.setAIPattern = function() {
     Game_Battler.prototype.setAIPattern.call(this);
     if (this.numActions() <= 0) return;
     AIManager.setBattler(this);
-    console.log(JSON.stringify(this.enemy().aiPattern))
     for (var i = 0; i < this.enemy().aiPattern.length; ++i) {
       var line = this.enemy().aiPattern[i];
       if (AIManager.isDecidedActionAI(line)) return;
@@ -858,15 +857,10 @@ AIManager.isDecidedActionAI = function(line) {
     } else {
       return false;
     }
-    console.log("line: " + line);
-    console.log("initial check:" + this.initialCheck(this._aiSkillId));
-    console.log("meet custom AI conditions:" + this.meetCustomAIConditions(this._aiSkillId));
 
     if (!this.initialCheck(this._aiSkillId)) return false;
     if (!this.meetCustomAIConditions(this._aiSkillId)) return false;
     this.action().setSkill(this._aiSkillId);
-    console.log("condition: " + condition);
-    console.log("pass all ai conditions check:" + this.passAllAIConditions(condition));
     if (!this.passAllAIConditions(condition)) return false;
     return true;
 };
@@ -1231,7 +1225,6 @@ AIManager.elementRateMatch = function(target, elementId, type) {
 AIManager.passAllAIConditions = function(line) {
   this._setActionGroup = undefined;
   var conditions = line.split('+++');
-  console.log("conditions:" + conditions);
   if (conditions.length <= 0) return false;
   while (conditions.length > 0) {
     var condition = conditions.shift().trim();
@@ -1350,8 +1343,6 @@ AIManager.conditionEval = function(condition) {
     var action = this.action();
     var item = action.item();
     var user = this.battler();
-    console.log(condition);
-    console.log(user.getStateCounter(17));
     var s = $gameSwitches._data;
     var v = $gameVariables._data;
     try {

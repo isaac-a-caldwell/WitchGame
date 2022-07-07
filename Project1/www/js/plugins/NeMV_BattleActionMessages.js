@@ -91,9 +91,6 @@ NeMV.BAM.processNotetags = function(subject, item, targets) {
 
 NeMV.BAM.Window_BattleLog_displayAction = Window_BattleLog.prototype.displayAction;
 Window_BattleLog.prototype.displayAction = function(subject, item, targets) {
-	console.log(subject);
-	console.log(item);
-	console.log(targets);
 	NeMV.BAM.processNotetags(subject, item, targets);
 	NeMV.BAM.Window_BattleLog_displayAction.call(this, subject, item);
 };

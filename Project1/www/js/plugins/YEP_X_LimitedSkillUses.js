@@ -594,7 +594,6 @@ DataManager.processLSUNotetags3 = function(group) {
       } else if (line.match(/<\/CUSTOM SKILL[ ](\d+)[ ]USE MAX>/i)) {
         var id = parseInt(RegExp.$1);
         obj.skillUseMaxEval[id] = evalLine;
-        console.log(id);
         evalMode = 'none';
         evalLine = '';
       } else if (line.match(/<\/CUSTOM SKILL[ ](.*)[ ]USE MAX>/i)) {
@@ -753,7 +752,6 @@ if (this.hasMaxLimit(skill))
 }
 else
 {
-	console.log(value);
 	skill.limitUses -= value;
 }
 };

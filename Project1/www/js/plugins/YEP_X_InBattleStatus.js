@@ -896,7 +896,6 @@ Yanfly.IBS.Scene_Battle_createPartyCommandWindow =
   Scene_Battle.prototype.createPartyCommandWindow;
 Scene_Battle.prototype.createPartyCommandWindow = function() {
   Yanfly.IBS.Scene_Battle_createPartyCommandWindow.call(this);
-  console.log('just called existing create party command');
   var win = this._partyCommandWindow;
   win.setHandler('inBattleStatus', this.commandInBattleStatus.bind(this));
 };
