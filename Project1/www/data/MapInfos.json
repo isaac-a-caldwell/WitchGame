@@ -48,7 +48,7 @@ null,
 {"id":46,"expanded":false,"name":"Monster Pit","order":47,"parentId":0,"scrollX":857,"scrollY":944.5},
 {"id":47,"expanded":false,"name":"Monster pit secret","order":48,"parentId":46,"scrollX":609,"scrollY":417.5},
 {"id":48,"expanded":false,"name":"Pit Cave","order":49,"parentId":46,"scrollX":775,"scrollY":409.5},
-{"id":49,"expanded":true,"name":"WitchMoot","order":50,"parentId":0,"scrollX":882,"scrollY":1894.5},
+{"id":49,"expanded":true,"name":"WitchMoot","order":50,"parentId":0,"scrollX":1865,"scrollY":409.5},
 {"id":50,"expanded":false,"name":"WitchMootEntrance","order":51,"parentId":49,"scrollX":601,"scrollY":417.5},
 {"id":51,"expanded":false,"name":"WitchMootCircle","order":52,"parentId":49,"scrollX":601,"scrollY":494.5},
 {"id":52,"expanded":false,"name":"InquisitorGoblin","order":45,"parentId":43,"scrollX":609,"scrollY":417.5}
